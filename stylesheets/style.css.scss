@@ -1,0 +1,280 @@
+// --------------------------------------------------
+// Amahi - Beach Theme
+// --------------------------------------------------
+
+ @import "amelia.min.css";
+// @import "cerulean.min.css";
+// @import "cosmo.min.css";
+// @import "cyborg.min.css";
+// @import "darkly.min.css";
+// @import "flatly.min.css";
+// @import "journal.min.css";
+// @import "lumen.min.css";
+// @import "readable.min.css";
+// @import "simplex.min.css";
+// @import "slate.min.css";
+// @import "spacelab.min.css";
+// @import "superhero.min.css";
+// @import "united.min.css";
+// @import "yeti.min.css";
+@import "_mixins.css.scss";
+
+
+html,body{
+  height:100%;
+}
+.left-margin-10{
+  margin-left:10px;
+}
+.right-margin-10{
+  margin-right: 10px !important;
+}
+.left-margin-20{
+  margin-left:20px;
+}
+.left-margin-40{
+  margin-left:40%;
+}
+.top-margin-10{
+  margin-top:10px;
+}
+.increase-length-40{
+  width:40px !important;
+}
+.increase-font-30{
+  font-size: 30px;
+}
+
+#logo-amahi{
+  background: url(../images/logo_amahi.png) no-repeat;
+  display: block;
+  width: 160px;
+  height: 47px;
+  text-indent:29px;
+  font-size: 30px;
+}
+.navbar{
+  margin-bottom:0px !important;
+}
+.well{
+  padding:0px !important;
+  margin-bottom: 0px !important;
+}
+//---------------------
+//DASHBOARD
+//----------------------
+.page-name{
+  list-style:none;
+}
+#welcome { @include clearfix; }
+
+#dashboard {
+  float: left;
+  width: 640px;
+}
+
+#welcome_apps {
+  list-style: none;
+  @include clearfix;
+  padding : initial;
+  > li {
+    background: #f2f2f2;
+    border: 3px solid #dedede;
+    float: left;
+    width: 304px;
+    margin: 0 10px 10px 0;
+    @include border-radius(5px);
+    @include box-shadow(0 1px 1px #fff, inset 0 0 1px 1px rgba(0,0,0,.2));
+
+    &.last { margin-right: 0; }
+
+    &.install-wrap {
+      background: url(../images/new_app_bg.png) no-repeat;
+      width: 284px;
+      height: 182px;
+      margin: 180px auto 0;
+      position: relative;
+      border: 0;
+      float: none;
+      @include border-radius(0);
+      @include box-shadow(none);
+
+      a {
+        background: url(../images/new_app_btn.png) no-repeat;
+        height: 72px;
+        width: 174px;
+        position: absolute;
+        top: 55px;
+        left: 55px;
+        border: 0;
+        line-height: 1;
+        padding: 0;
+        margin: 0;
+        @include border-radius(0);
+      }
+    }
+
+    a {
+      font-size: 14px;
+      font-weight: 700;
+      color: #526266;
+      height: 80px;
+      line-height: 80px;
+      width: 284px;
+      padding: 10px 5px;
+      margin: 4px auto;
+      @include border-radius(3px);
+      overflow: hidden;
+
+      &:hover { border-color: $redColor; color: $redColor; text-decoration: none; }
+    }
+
+    img, strong { float: left; }
+
+    img {
+      width: 120px;
+      margin: 0 15px 0 0;
+      vertical-align: middle;
+      display: block;
+    }
+    &:hover { border-color: $redColor; color: $redColor; text-decoration: none; }
+  }
+}// end wellcome-apps
+
+#latest_news {
+  background: $greyBg;
+  border: 9px solid $greyBg;
+  float: right;
+  width: 300px;
+  @include border-radius(4px);
+}
+
+#app {
+  margin: 30px auto 0;
+  padding: 0;
+  width: 960px;
+  @include clearfix;
+}
+//--------------------
+//Footer Setting
+//--------------------
+
+
+
+#content {
+    min-height: 100%;
+    height: auto !important;
+    height:100% ;
+    margin-bottom: -60px;
+}
+
+#footer,.push{
+    height: 70px; /* .push must be the same height as .footer */
+}
+
+
+//----------------------------------
+//Side Menu
+//----------------------------------
+
+.sidebar-nav .navbar .navbar-collapse {
+    padding: 0;
+    max-height: none;
+  }
+  .sidebar-nav .navbar ul {
+    float: none;
+    display: block;
+  }
+  .sidebar-nav .navbar li {
+    float: none;
+    display: block;
+  }
+  .sidebar-nav .navbar li a {
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+  .sub-nav{
+    float:right !important;
+  }
+  .glyphicon{
+    margin-right:15px;
+  }
+  .glyphicon-users:before{
+     content: "\e008";
+  }
+  .glyphicon-shares:before{
+     content: "\e118";
+  }
+  .glyphicon-disks:before{
+     content: "\e121";
+  }
+  .glyphicon-apps:before{
+     content: "\e011";
+  }
+  .glyphicon-network:before{
+     content: "\e135";
+  }
+  .glyphicon-settings:before{
+     content: "\e019";
+  }
+  th,td{
+  vertical-align: top;
+  }
+  .settings-col1-pad{
+  width:50%;
+  }
+  .settings-col1-pad1{
+  width:30%;
+  }
+  .form_hidden{
+  display:none;
+  }
+  small{
+  font-size:10px;
+  }
+  legend{
+  font-size: 15px;
+  }
+
+ //Apps
+ .app-store-header {
+  padding: 15px 0 15px 162px;
+  overflow: hidden;
+
+  a {
+    background: url(../images/sprites/apps_btns_sprite.png) no-repeat;
+    display: block;
+    text-indent: -9999px;
+    float: left;
+    height: 48px;
+    width: 172px;
+    cursor: pointer;
+
+    &#btn-get-apps { background-position: 0 0; margin: 0 10px 0 0; }
+    &#btn-install-apps { background-position: -182px 0; }
+  }
+}
+ .img-wrap {
+    background: #fff;
+    padding: 2px;
+    border: 1px solid #cccccc;
+    @include border-radius(3px);
+    img { display: block; max-width: 100%; }
+  }
+// Spinner
+.spinner {
+  margin-left: 10px;
+  background: url(../images/working.gif) no-repeat left center;
+  padding: 16px;
+}
+
+.thumbnail{
+  width:64px;
+  height:64px;
+  display:inline-block !important;
+}
+#theme-sshot{
+  height:100%;
+  width:100%
+}
+

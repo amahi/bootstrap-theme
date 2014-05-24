@@ -1,0 +1,21 @@
+#welcome.app-nav
+  section#dashboard
+    ul#welcome_apps
+      - if @apps.size > 6
+        = render :partial => 'apps'
+      - else
+        = render :partial => 'app', :collection => @apps
+
+      - if @apps.length < 3
+        li.install-wrap
+          = link_to '', apps_engine.root_path, :title => t('install_apps'), :id => 'install-apps'
+
+  - if @news
+    section#latest_news
+      ul.list-group
+        li.list-group-item 
+          h3 = t('latest_news')
+        = render :partial => 'news', :collection => @news
+        li.list-group-item
+          span#more_news
+            = link_to(t("more_news"), "http://blog.amahi.org/")

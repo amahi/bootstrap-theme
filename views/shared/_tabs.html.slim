@@ -1,0 +1,28 @@
+#tabs.sidebar-nav.col-sm-3
+  nav.navbar.navbar-default role="navigation"
+    .navbar-header
+      button.navbar-toggle data-target=".navbar-sidemenu-collapse" data-toggle="collapse" type="button" 
+        span.sr-only Toggle navigation
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+    .collapse.navbar-collapse.navbar-sidemenu-collapse
+      ul.nav.navbar-nav
+        - @tabs.each do |tab|
+          li[class=tab_class(tab)] 
+            a href=tab.url
+              i class="glyphicon glyphicon-#{tab.label.downcase}"
+              = t tab.label
+            - if tab_class(tab)=='active'
+                nav.navbar.navbar-default.show role="navigation"
+                  .collapse.navbar-collapse.navbar-sidemenu-collapse 
+                    ul.navbar-nav.nav.sub-nav
+                      - if @advanced
+                        - tab.advanced_subtabs.each do |subtab|
+                          li[class=subtab_class(subtab.id)]
+                            = link_to t(subtab.label), subtab.url
+                      - else
+                        - tab.basic_subtabs.each do |subtab|
+                          li[class=subtab_class(subtab.id)]
+                            = link_to t(subtab.label), subtab.url
+            
