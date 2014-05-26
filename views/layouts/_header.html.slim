@@ -1,7 +1,7 @@
-nav#header.navbar.navbar-default role="navigation" 
+nav#header.navbar.navbar-default role="navigation"
   .container
     .navbar-header
-      button.navbar-toggle data-target="#navbarCollapse" data-toggle="collapse" type="button" 
+      button.navbar-toggle data-target="#navbarCollapse" data-toggle="collapse" type="button"
         span.sr-only Toggle navigation
         span.icon-bar
         span.icon-bar
@@ -14,7 +14,7 @@ nav#header.navbar.navbar-default role="navigation"
           a href=root_path
             i.glyphicon.glyphicon-home
         - if current_user_is_admin?
-           li 
+           li
              a href=users_engine.root_path
                i.glyphicon.glyphicon-cog
            li
@@ -26,5 +26,5 @@ nav#header.navbar.navbar-default role="navigation"
         - else
            li
              a href='http://help.amahi.org' target='_blank'
-               i.glyphicon.glyphicon-info-sign    
+               i.glyphicon.glyphicon-info-sign
 

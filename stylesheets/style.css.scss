@@ -66,22 +66,16 @@ html,body{
 .page-name{
   list-style:none;
 }
-#welcome { @include clearfix; }
 
-#dashboard {
-  float: left;
-  width: 640px;
-}
+
 
 #welcome_apps {
   list-style: none;
   @include clearfix;
   padding : initial;
-  > li {
+  > div {
     background: #f2f2f2;
     border: 3px solid #dedede;
-    float: left;
-    width: 304px;
     margin: 0 10px 10px 0;
     @include border-radius(5px);
     @include box-shadow(0 1px 1px #fff, inset 0 0 1px 1px rgba(0,0,0,.2));
@@ -144,31 +138,19 @@ html,body{
 #latest_news {
   background: $greyBg;
   border: 9px solid $greyBg;
-  float: right;
-  width: 300px;
   @include border-radius(4px);
 }
 
 #app {
   margin: 30px auto 0;
   padding: 0;
-  width: 960px;
-  @include clearfix;
+  overflow: hidden;
 }
 //--------------------
 //Footer Setting
 //--------------------
 
-
-
-#content {
-    min-height: 100%;
-    height: auto !important;
-    height:100% ;
-    margin-bottom: -60px;
-}
-
-#footer,.push{
+.push{
     height: 70px; /* .push must be the same height as .footer */
 }
 
@@ -278,3 +260,9 @@ html,body{
   width:100%
 }
 
+//bootstrap some changes
+
+.row{
+  margin-left:0px;
+  margin-right: 0px;
+}

@@ -1,19 +1,19 @@
-#welcome.app-nav
-  section#dashboard
-    ul#welcome_apps
+#welcome.app-nav.row
+  section#dashboard.col-xs-12.col-sm-12.col-md-8.col-lg-8
+    div#welcome_apps.row
       - if @apps.size > 6
         = render :partial => 'apps'
       - else
         = render :partial => 'app', :collection => @apps
 
       - if @apps.length < 3
-        li.install-wrap
+        div.install-wrap
           = link_to '', apps_engine.root_path, :title => t('install_apps'), :id => 'install-apps'
 
   - if @news
-    section#latest_news
+    section#latest_news.col-xs-12.col-sm-12.col-md-4.col-lg-4
       ul.list-group
-        li.list-group-item 
+        li.list-group-item
           h3 = t('latest_news')
         = render :partial => 'news', :collection => @news
         li.list-group-item
