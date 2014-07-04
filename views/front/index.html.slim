@@ -1,8 +1,9 @@
+- size = @apps.size
 #welcome.app-nav.row
   section#dashboard.col-xs-12.col-sm-12.col-md-8.col-lg-8
     div#welcome_apps.row
-      - if @apps.size > 6
-        = render :partial => 'apps'
+      - if size > 6
+        = render partial: 'pair', collection: @apps[0..(size-1)/2].zip(@apps[(size+1)/2..-1])
       - else
         = render :partial => 'app', :collection => @apps
 
