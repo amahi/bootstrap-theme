@@ -23,7 +23,6 @@ html[dir="#{@locale_direction}" lang="#{I18n.locale}" xml:lang="#{I18n.locale}"]
     = javascript_include_tag 'application'
     - amahi_plugins.each do |p|
       = javascript_include_tag p[:class].underscore
-
     = javascript_tag {'$.fx.off = true;' if Rails.env.test?}
     - for header in theme.headers do
       = header =~ /\.js$/ ? javascript_include_tag(header) : header
@@ -33,38 +32,15 @@ html[dir="#{@locale_direction}" lang="#{I18n.locale}" xml:lang="#{I18n.locale}"]
 
     = csrf_meta_tags
 
-  body
+  body.basic
 
     = render 'layouts/header'
 
     #content
-      = render 'layouts/subheader'
       = render 'shared/flash_messages'
       #app.inner
-        #tabs.sidebar-nav.col-sm-3
-          nav.navbar.navbar-default role="navigation"
-            .navbar-header
-              button.navbar-toggle data-target=".navbar-sidemenu-collapse" data-toggle="collapse" type="button"
-                span.sr-only Toggle navigation
-                span.icon-bar
-                span.icon-bar
-                span.icon-bar
-            .collapse.navbar-collapse.navbar-sidemenu-collapse
-            ul.nav.navbar-nav
-              li.active
-                a href='/tab/debug'
-                  = t 'debug'
-                ul.navbar-nav.nav.sub-nav
-                  li[class="#{request.fullpath == '/tab/debug' ? 'active' : ''}"]
-                    = link_to "App Logs", '/tab/debug'
-                  li[class="#{request.fullpath == '/tab/debug/logs' ? 'active' : ''}"]
-                    = link_to "Logs", '/tab/debug/logs'
-                  li[class="#{request.fullpath == '/tab/debug/system' ? 'active' : ''}"]
-                    = link_to "System Info", '/tab/debug/system'
-        #preferences
-          .preftab
-            = yield
-
+        = yield
+      .push
     = render 'layouts/footer'
 
     #js-templates[style="display:none"]
