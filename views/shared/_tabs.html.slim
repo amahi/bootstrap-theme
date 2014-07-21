@@ -10,11 +10,11 @@
       ul.nav.navbar-nav
         - @tabs.each do |tab|
           li[class=tab_class(tab)]
-            a href=tab.url
+            a.menu href=tab.url
               i class="glyphicon glyphicon-#{tab.label.downcase}"
               = t tab.label
             - if tab_class(tab)=='active'
-                nav.navbar.navbar-default.show role="navigation"
+                nav.navbar.navbar-default.show.submenu role="navigation"
                   .collapse.navbar-collapse.navbar-sidemenu-collapse
                     ul.navbar-nav.nav.sub-nav
                       - if @advanced
@@ -24,5 +24,17 @@
                       - else
                         - tab.basic_subtabs.each do |subtab|
                           li[class=subtab_class(subtab.id,tab.id)]
+                            = link_to t(subtab.label), subtab.url
+            - else
+                nav.navbar.navbar-default.hidden.submenu role="navigation"
+                  .collapse.navbar-collapse.navbar-sidemenu-collapse
+                    ul.navbar-nav.nav.sub-nav
+                      - if @advanced
+                        - tab.advanced_subtabs.each do |subtab|
+                          li[class=subtab_class(subtab.id,tab.id)]
+                            = link_to t(subtab.label), subtab.url
+                      - else
+                        - tab.basic_subtabs.each do |subtab|
+                          li
                             = link_to t(subtab.label), subtab.url
 
