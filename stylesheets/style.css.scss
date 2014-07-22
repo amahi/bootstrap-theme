@@ -4,12 +4,12 @@
 
 //@import "amelia.min.css";
 @import "default.css";
-// @import "cerulean.min.css";
-// @import "cosmo.min.css";
-// @import "cyborg.min.css";
-// @import "darkly.min.css";
-// @import "flatly.min.css";
-// @import "journal.min.css";
+//@import "cerulean.min.css";
+//@import "cosmo.min.css";
+//@import "cyborg.min.css";
+//@import "darkly.min.css";
+//@import "flatly.min.css";
+//@import "journal.min.css";
 // @import "lumen.min.css";
 // @import "readable.min.css";
 // @import "simplex.min.css";
@@ -263,5 +263,201 @@ html,body{
 
 .row{
   margin-left:0px;
+  margin-right: 0px;
+}
+
+//Default stylesheet design
+
+.settings-table {
+  margin: 0px 0px 15px 0px;
+  @include border-radius(5px);
+
+  > div {
+    &:last-child {
+      .stretchtoggle { @include border-radius(0 0 5px 5px); }
+    }
+  }
+  thead {
+    th {
+      &:last-child { @include border-radius(0 5px 0 0); }
+    }
+  }
+
+  tbody {
+    tr {
+      &:last-child {
+        td {
+          border-bottom: 0;
+
+          &:first-child { @include border-radius(0 0 0 5px); }
+          &:last-child { @include border-radius(0 0 5px 0); }
+        }
+      }
+    }
+  }
+}
+
+
+table.settings, .settings th {
+  border-collapse: collapse;
+  margin-bottom: 0px;
+}
+
+#settings-table table tr td:first-child {
+  vertical-align: top;
+}
+
+.settings th{
+  font-size: 16px;
+  background: #333;
+  color: #fff;
+  border-collapse: collapse;
+  height: 40px;
+  line-height: 40px;
+  text-align: left;
+  font-weight: bold;
+}
+
+
+.settings-col2{
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+}
+
+.settings-col1 {
+  padding: 0 0 0 30px;
+  width: 30%;
+  @include border-radius(5px 0 0 0);
+}
+
+.settings-col2, .users-col2, .shares-col2, .dhcp-col2 {
+  width: 70%;
+  padding: 0 0 0 30px;
+  @include border-radius(0 5px 0 0);
+}
+
+.settings-lastcol {
+  padding: 0 0 0 3px;
+  @include border-radius(0 5px 0 0);
+}
+
+
+table.settings {
+  tbody td {
+    height: 35px;
+    border-bottom: 1px solid #e8e8e8;
+  }
+  .odd td {
+    background: #f8f8f8;
+  }
+}
+
+th.centered, td.centered {
+  text-align: center;
+}
+
+table.apptable {
+  .odd td:first-child, .even td:first-child {
+    padding: 0 0 0 5px;
+  }
+}
+
+#shares {
+  p {
+    padding: 0 100px;
+  }
+  table p, div p {
+    padding: 0;
+  }
+  padding-bottom: 20px;
+}
+
+.stretchtoggle {
+  height: 33px;
+  line-height: 33px;
+  border-bottom-color: #dfdfdf;
+  @include background-gradient(#fcfcfc, #f7f7f7);
+
+  td {
+    text-align: left;
+    a {
+      color: #000;
+      font-size: 13px;
+      font-weight: bold;
+      text-decoration: none;
+      display: inline-block;
+    }
+  }
+}
+
+.settings-stretcher {
+  border-bottom: 1px solid #E8E8E8;
+
+  legend, fieldset {
+    color: darkgrey;
+    width: inherit;
+    font-size: inherit;
+    line-height: initial;
+  }
+  legend b, fieldset b {
+    color: black;
+  }
+}
+
+.settings-fields {
+  table {
+    border-collapse: collapse;
+
+    td:first-child {
+      width: 10%;
+      text-align: right;
+      padding-right: 25px;
+      border-right: 1px solid #DFDFDF;
+    }
+  }
+  td {
+    padding: 0 0 10px 10px;
+  }
+  table {
+    td table td {
+      padding-bottom: 0;
+      padding-left: 0;
+      padding-top: 0 !important;
+      border: 0 !important;
+    }
+    tr:first-child td {
+      padding-top: 7px;
+    }
+  }
+  .access thead td {
+    padding-bottom: 4px;
+    text-align: center;
+  }
+}
+
+td {
+  &.align-center {
+    text-align: center;
+  }
+  &.align-top {
+    vertical-align: top;
+  }
+}
+.settings-stretcher > div  > fieldset, .settings-stretcher > fieldset, .settings-fields > fieldset{
+  margin: 20px;
+  border: 1px solid grey;
+  border: 1px solid #dfdfdf;
+  padding: 5px 10px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+}
+legend {
+  border : 0px;
+  width: auto;
+}
+.form-horizontal .form-group {
+  margin-left: 0px;
   margin-right: 0px;
 }
