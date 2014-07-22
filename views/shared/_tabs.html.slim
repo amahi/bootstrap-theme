@@ -1,11 +1,12 @@
 #tabs.sidebar-nav.col-sm-3
   nav.navbar.navbar-default role="navigation"
-    .navbar-header
+    .navbar-header.sidemenu_header
       button.navbar-toggle data-target=".navbar-sidemenu-collapse" data-toggle="collapse" type="button"
         span.sr-only Toggle navigation
         span.icon-bar
         span.icon-bar
         span.icon-bar
+      .navbar-brand Navigation
     .collapse.navbar-collapse.navbar-sidemenu-collapse
       ul.nav.navbar-nav
         - @tabs.each do |tab|

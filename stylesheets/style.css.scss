@@ -163,6 +163,7 @@ html,body{
 .sidebar-nav .navbar .navbar-collapse {
     padding: 0;
     max-height: none;
+    overflow: hidden;
   }
   .sidebar-nav .navbar ul {
     float: none;
@@ -460,4 +461,10 @@ legend {
 .form-horizontal .form-group {
   margin-left: 0px;
   margin-right: 0px;
+}
+
+//Prevent floating left case for sidemenu brand
+.sidemenu_header{
+  float: none;
+
 }
